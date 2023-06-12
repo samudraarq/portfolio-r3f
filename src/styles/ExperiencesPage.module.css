@@ -1,0 +1,26 @@
+.title {
+  font-size: 24px;
+}
+
+.text {
+  color: #5c5c5c;
+}
+
+.link {
+  color: #0e4669;
+  text-decoration: underline;
+}
+
+.skillContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.pill {
+  background-color: #0e4669;
+  color: #fff;
+  border-radius: 20px;
+  padding: 5px 10px;
+}

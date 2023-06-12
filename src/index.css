@@ -11,6 +11,8 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
@@ -18,12 +20,18 @@ body,
 #root {
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 a {
   text-decoration: none;
   color: inherit;
   pointer-events: all;
+}
+
+p {
+  font-size: 14px;
+}
+
+span {
+  font-size: 12px;
 }
