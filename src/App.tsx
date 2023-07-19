@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import { Outlet } from "react-router-dom";
 import styles from "./App.module.css";
 import { Canvas } from "@react-three/fiber";
-import { Perf } from "r3f-perf";
 
 function App() {
   return (

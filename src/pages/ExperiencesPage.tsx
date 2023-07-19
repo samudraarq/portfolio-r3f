@@ -20,8 +20,8 @@ const ExperiencesPage = () => {
       </p>
       <p className={styles.text}>Singapore</p>
       <p className={styles.text}>
-        Develop Wine.Delivery web portal & mobile app user interface, using
-        ReactJS and React Native.
+        Develop Wine.Delivery web and merchant portal & mobile app user
+        interface, using ReactJS and React Native.
       </p>
       <div className={styles.skillContainer}>
         <span className={styles.pill}>React</span>
