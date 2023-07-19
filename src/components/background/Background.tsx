@@ -1,12 +1,8 @@
-import { useRef } from "react";
-import { Mesh } from "three";
-import { Float, OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { useControls } from "leva";
+import Box from "./Box";
 
 const Background = () => {
-  const boxRef = useRef<Mesh>(null!);
-  const sphereRef = useRef<Mesh>(null!);
-
   const { bgColor, baseColor } = useControls("base", {
     bgColor: "#1b1b1c",
     baseColor: "#555555",
@@ -37,21 +33,10 @@ const Background = () => {
 
       <fog args={[bgColor, near, far]} attach="fog" />
 
-      <mesh castShadow ref={sphereRef}>
-        <sphereGeometry args={[0.5, 12, 12]} />
-        <meshStandardMaterial color={"salmon"} />
-      </mesh>
-      <Float
-        speed={1} // Animation speed, defaults to 1
-        rotationIntensity={2} // XYZ rotation intensity, defaults to 1
-        floatIntensity={2} // Up/down float intensity, works like a multiplier with floatingRange,defaults to 1
-        floatingRange={[-0.3, 0.3]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
-      >
-        <mesh position={[2, 0, 0]} ref={boxRef} castShadow>
-          <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color="grey" />
-        </mesh>
-      </Float>
+      <Box position={[0, -1, 0]} />
+      <Box position={[1.1, -0.2, 0]} scale={0.5} />
+      <Box position={[-0.5, 0.3, 0]} scale={0.4} />
+      <Box position={[0.3, 0.4, 0]} scale={0.2} />
 
       <mesh receiveShadow position-y={[-2]} rotation-x={-Math.PI / 2}>
         <planeGeometry args={[80, 80]} />
