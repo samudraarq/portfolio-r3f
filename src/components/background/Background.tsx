@@ -1,6 +1,7 @@
-import { OrbitControls } from "@react-three/drei";
+// import { OrbitControls } from "@react-three/drei";
 import { useControls } from "leva";
 import Box from "./Box";
+import CameraRig from "./CameraRig";
 
 const Background = () => {
   const { bgColor, baseColor } = useControls("base", {
@@ -26,7 +27,8 @@ const Background = () => {
   return (
     <>
       <color attach="background" args={[bgColor]} />
-      <OrbitControls />
+      {/* <OrbitControls /> */}
+      <CameraRig />
 
       <ambientLight />
       <pointLight position={[10, 10, 10]} castShadow />
