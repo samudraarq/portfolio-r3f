@@ -2,6 +2,8 @@
 import { useControls } from "leva";
 import Box from "./Box";
 import CameraRig from "./CameraRig";
+import Particles from "./Particles";
+import { Stars } from "@react-three/drei";
 
 const Background = () => {
   const { bgColor, baseColor } = useControls("base", {
@@ -27,13 +29,29 @@ const Background = () => {
   return (
     <>
       <color attach="background" args={[bgColor]} />
+
+      {/* Camera */}
       {/* <OrbitControls /> */}
       <CameraRig />
 
+      {/* Light */}
       <ambientLight />
       <pointLight position={[10, 10, 10]} castShadow />
 
+      {/* Staging */}
+      <Stars
+        radius={100}
+        depth={50}
+        count={1000}
+        factor={4}
+        saturation={0}
+        fade
+        speed={1}
+      />
       <fog args={[bgColor, near, far]} attach="fog" />
+
+      {/* Mesh */}
+      <Particles />
 
       <Box position={[0, -1, 0]} />
       <Box position={[1.1, -0.2, 0]} scale={0.5} />
