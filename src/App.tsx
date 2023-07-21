@@ -11,7 +11,6 @@ function App() {
         eventSource={document.getElementById("root") || undefined}
         shadows
       >
-        {/* <Perf  /> */}
         <Background />
       </Canvas>
       <div className={styles.content}>

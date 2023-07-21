@@ -5,11 +5,15 @@ import CameraRig from "./CameraRig";
 import Particles from "./Particles";
 import { Stars } from "@react-three/drei";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
+import { Perf } from "r3f-perf";
+import { Suspense } from "react";
+import Loader from "./Loader";
 
 const Background = () => {
-  const { bgColor, baseColor } = useControls("base", {
+  const { bgColor, baseColor, bloomColor } = useControls("base", {
     bgColor: "#1b1b1c",
     baseColor: "#555555",
+    bloomColor: "#ff8600",
   });
 
   const { near, far } = useControls("fog", {
@@ -26,10 +30,15 @@ const Background = () => {
       step: 0.1,
     },
   });
+  const { perfVisible } = useControls("perf", {
+    perfVisible: false,
+  });
 
   return (
-    <>
+    <Suspense fallback={<Loader />}>
       <color attach="background" args={[bgColor]} />
+
+      {perfVisible && <Perf position="top-left" />}
 
       {/* Camera */}
       {/* <OrbitControls /> */}
@@ -59,26 +68,26 @@ const Background = () => {
       <Box position={[-0.5, 0.3, 0]} scale={0.4} />
       <Box position={[0.3, 0.4, 0]} scale={0.2} />
 
-      <mesh receiveShadow position-y={[-2]} rotation-x={-Math.PI / 2}>
-        <planeGeometry args={[80, 80]} />
-        <meshStandardMaterial color={baseColor} />
-      </mesh>
-
-      <mesh position-y={1.5} castShadow>
-        <sphereGeometry args={[0.2, 32, 32]} />
+      <mesh position-y={1.2} castShadow>
+        <sphereGeometry args={[0.2, 8, 8]} />
         <meshStandardMaterial
-          color="red"
-          emissive="red"
+          color={bloomColor}
+          emissive={bloomColor}
           emissiveIntensity={8}
           toneMapped={false}
         />
+      </mesh>
+
+      <mesh receiveShadow position-y={[-2]} rotation-x={-Math.PI / 2}>
+        <planeGeometry args={[80, 80]} />
+        <meshStandardMaterial color={baseColor} />
       </mesh>
 
       {/* Post-processing */}
       <EffectComposer>
         <Bloom mipmapBlur luminanceThreshold={1} />
       </EffectComposer>
-    </>
+    </Suspense>
   );
 };
 
