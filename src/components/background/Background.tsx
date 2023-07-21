@@ -4,6 +4,7 @@ import Box from "./Box";
 import CameraRig from "./CameraRig";
 import Particles from "./Particles";
 import { Stars } from "@react-three/drei";
+import { Bloom, EffectComposer } from "@react-three/postprocessing";
 
 const Background = () => {
   const { bgColor, baseColor } = useControls("base", {
@@ -62,6 +63,21 @@ const Background = () => {
         <planeGeometry args={[80, 80]} />
         <meshStandardMaterial color={baseColor} />
       </mesh>
+
+      <mesh position-y={1.5} castShadow>
+        <sphereGeometry args={[0.2, 32, 32]} />
+        <meshStandardMaterial
+          color="red"
+          emissive="red"
+          emissiveIntensity={8}
+          toneMapped={false}
+        />
+      </mesh>
+
+      {/* Post-processing */}
+      <EffectComposer>
+        <Bloom mipmapBlur luminanceThreshold={1} />
+      </EffectComposer>
     </>
   );
 };
