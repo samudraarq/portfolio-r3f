@@ -6,8 +6,6 @@ import Particles from "./Particles";
 import { Stars } from "@react-three/drei";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { Perf } from "r3f-perf";
-import { Suspense } from "react";
-import Loader from "./Loader";
 
 const Background = () => {
   const { bgColor, baseColor, bloomColor } = useControls("base", {
@@ -35,7 +33,7 @@ const Background = () => {
   });
 
   return (
-    <Suspense fallback={<Loader />}>
+    <>
       <color attach="background" args={[bgColor]} />
 
       {perfVisible && <Perf position="top-left" />}
@@ -87,7 +85,7 @@ const Background = () => {
       <EffectComposer>
         <Bloom mipmapBlur luminanceThreshold={1} />
       </EffectComposer>
-    </Suspense>
+    </>
   );
 };
 

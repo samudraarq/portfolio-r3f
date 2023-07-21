@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar";
 import { Outlet } from "react-router-dom";
 import styles from "./App.module.css";
 import { Canvas } from "@react-three/fiber";
+import { Loader } from "@react-three/drei";
+import { Suspense } from "react";
 
 function App() {
   return (
@@ -11,8 +13,11 @@ function App() {
         eventSource={document.getElementById("root") || undefined}
         shadows
       >
-        <Background />
+        <Suspense fallback={null}>
+          <Background />
+        </Suspense>
       </Canvas>
+      <Loader />
       <div className={styles.content}>
         <div className={styles.container}>
           <Navbar />
