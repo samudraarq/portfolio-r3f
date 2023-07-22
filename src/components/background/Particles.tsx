@@ -13,7 +13,7 @@ const Particles = () => {
   }, [count]);
 
   useFrame((_state, delta) => {
-    ref.current.rotation.y += delta * 0.05;
+    ref.current.rotation.y += delta * 0.08;
   });
 
   return (

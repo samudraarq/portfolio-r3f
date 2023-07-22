@@ -3,11 +3,10 @@
 }
 
 .text {
-  color: #5c5c5c;
+  font-size: 16px;
 }
 
 .link {
-  color: #0e4669;
   text-decoration: underline;
 }
 
@@ -20,7 +19,6 @@
 
 .pill {
   background-color: #0e4669;
-  color: #fff;
   border-radius: 20px;
   padding: 5px 10px;
 }
