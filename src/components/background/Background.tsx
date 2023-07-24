@@ -3,7 +3,7 @@ import { useControls } from "leva";
 import Box from "./Box";
 import CameraRig from "./CameraRig";
 import Particles from "./Particles";
-import { Stars } from "@react-three/drei";
+import { OrbitControls, Stars } from "@react-three/drei";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { Perf } from "r3f-perf";
 
@@ -31,6 +31,9 @@ const Background = () => {
   const { perfVisible } = useControls("perf", {
     perfVisible: false,
   });
+  const { orbitControls } = useControls("controls", {
+    orbitControls: false,
+  });
 
   return (
     <>
@@ -39,8 +42,8 @@ const Background = () => {
       {perfVisible && <Perf position="top-left" />}
 
       {/* Camera */}
-      {/* <OrbitControls /> */}
-      <CameraRig />
+      <OrbitControls enabled={orbitControls} />
+      {!orbitControls && <CameraRig />}
 
       {/* Light */}
       <ambientLight />
@@ -67,7 +70,7 @@ const Background = () => {
       <Box position={[0.3, 0.4, 0]} scale={0.2} />
 
       <mesh position-y={1.2} castShadow>
-        <sphereGeometry args={[0.2, 8, 8]} />
+        <sphereGeometry args={[0.2, 16, 16]} />
         <meshStandardMaterial
           color={bloomColor}
           emissive={bloomColor}

@@ -1,8 +1,25 @@
+.navContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100px;
+
+  margin: 0px auto;
+  max-width: 1080px;
 }
 
 .navItems {
@@ -10,4 +27,16 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+}
+
+@media screen and (max-width: 1080px) {
+  .navbar {
+    padding: 0px 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    height: 80px;
+  }
 }

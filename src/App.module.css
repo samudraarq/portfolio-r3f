@@ -6,7 +6,20 @@
   height: 100%;
 }
 
-.container {
-  margin: 0px auto;
+.contentContainer {
+  margin: 100px auto;
   max-width: 1080px;
+  padding-bottom: 40px;
+}
+
+@media screen and (max-width: 1080px) {
+  .contentContainer {
+    padding: 0 10px 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contentContainer {
+    margin: 80px auto;
+  }
 }

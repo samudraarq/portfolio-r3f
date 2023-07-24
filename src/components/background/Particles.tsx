@@ -3,11 +3,13 @@ import { useMemo, useRef } from "react";
 
 const Particles = () => {
   const ref = useRef<THREE.Points>(null!);
-  const count = 200;
+  const count = 300;
   const particles = useMemo(() => {
     const position = new Float32Array(count * 3);
-    for (let i = 0; i < count * 3; i++) {
+    for (let i = 0; i < count; i++) {
       position[i] = (Math.random() - 0.5) * 10;
+      position[i + 1] = (Math.random() - 0.5) * 5;
+      position[i + 2] = (Math.random() - 0.5) * 10;
     }
     return { position };
   }, [count]);

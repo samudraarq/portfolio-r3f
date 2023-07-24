@@ -1,3 +1,7 @@
+.section {
+  margin-bottom: 32px;
+}
+
 .title {
   font-size: 24px;
 }
@@ -18,7 +22,7 @@
 }
 
 .pill {
-  background-color: #0e4669;
+  background-color: #1a2f3d;
   border-radius: 20px;
   padding: 5px 10px;
 }

@@ -24,8 +24,8 @@ function App() {
       </Canvas>
       <Loader />
       <div className={styles.content}>
-        <div className={styles.container}>
-          <Navbar />
+        <Navbar />
+        <div className={styles.contentContainer}>
           <Outlet />
         </div>
       </div>
