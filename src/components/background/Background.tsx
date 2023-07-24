@@ -7,10 +7,9 @@ import { OrbitControls, Stars } from "@react-three/drei";
 import { Perf } from "r3f-perf";
 
 const Background = () => {
-  const { bgColor, baseColor, bloomColor } = useControls("base", {
+  const { bgColor, baseColor } = useControls("base", {
     bgColor: "#1b1b1c",
     baseColor: "#555555",
-    bloomColor: "#ff8600",
   });
 
   const { near, far } = useControls("fog", {
@@ -67,16 +66,7 @@ const Background = () => {
       <Box position={[1.1, -0.2, 0]} scale={0.5} />
       <Box position={[-0.5, 0.3, 0]} scale={0.4} />
       <Box position={[0.3, 0.4, 0]} scale={0.2} />
-
-      <mesh position-y={1.2} castShadow>
-        <sphereGeometry args={[0.2, 16, 16]} />
-        <meshStandardMaterial
-          color={bloomColor}
-          emissive={bloomColor}
-          emissiveIntensity={8}
-          toneMapped={false}
-        />
-      </mesh>
+      <Box position={[0, 1, 0]} scale={0.12} />
 
       <mesh receiveShadow position-y={[-2]} rotation-x={-Math.PI / 2}>
         <planeGeometry args={[80, 80]} />
