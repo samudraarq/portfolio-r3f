@@ -2,7 +2,7 @@ import styles from "../styles/ExperiencesPage.module.css";
 
 const ExperiencesPage = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <div className={styles.section}>
         <p className={styles.title}>
           Software Engineer{" "}
