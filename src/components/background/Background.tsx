@@ -4,7 +4,6 @@ import Box from "./Box";
 import CameraRig from "./CameraRig";
 import Particles from "./Particles";
 import { OrbitControls, Stars } from "@react-three/drei";
-import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { Perf } from "r3f-perf";
 
 const Background = () => {
@@ -83,11 +82,6 @@ const Background = () => {
         <planeGeometry args={[80, 80]} />
         <meshStandardMaterial color={baseColor} />
       </mesh>
-
-      {/* Post-processing */}
-      <EffectComposer>
-        <Bloom mipmapBlur luminanceThreshold={1} />
-      </EffectComposer>
     </>
   );
 };
