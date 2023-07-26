@@ -7,8 +7,12 @@ const HomePage = () => {
       <h1>Frontend Developer</h1>
       <h2>Hi, my name is Samudra. I am a frontend developer from Indonesia.</h2>
       <div className={styles.btnContainer}>
-        <Link to="/experiences">My Experiences</Link>
-        <Link to="/about">About Me</Link>
+        <Link to="/experiences" className={styles.btnMain}>
+          My Experiences
+        </Link>
+        <Link to="/about" className={styles.btnSecondary}>
+          About Me
+        </Link>
       </div>
     </div>
   );

@@ -7,8 +7,12 @@ const Navbar = () => {
       <div className={styles.navbar}>
         <Link to="/">Samudra F.A. </Link>
         <div className={styles.navItems}>
-          <Link to="/experiences">My Experiences</Link>
-          <Link to="/about">About Me</Link>
+          <Link to="/experiences" className={styles.navLink}>
+            My Experiences
+          </Link>
+          <Link to="/about" className={styles.navLink}>
+            About Me
+          </Link>
         </div>
       </div>
     </nav>
