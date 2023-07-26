@@ -2,6 +2,10 @@
   margin-top: 180px;
 }
 
+.subtitle {
+  font-weight: 500;
+}
+
 .btnContainer {
   margin-top: 20px;
   display: flex;

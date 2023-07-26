@@ -14,7 +14,7 @@ const Box = ({
   floatingRange = [-0.1, 0.1],
 }: Props) => {
   const { color } = useControls("box", {
-    color: "#cccccc",
+    color: "#777777",
   });
 
   const float = useMemo(() => {
