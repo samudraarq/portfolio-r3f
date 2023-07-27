@@ -8,7 +8,7 @@ const Navbar = () => {
         <Link to="/">Samudra F.A. </Link>
         <div className={styles.navItems}>
           <Link to="/experiences" className={styles.navLink}>
-            My Experiences
+            Experiences
           </Link>
           <Link to="/about" className={styles.navLink}>
             About Me

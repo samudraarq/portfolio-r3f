@@ -9,11 +9,11 @@ const HomePage = () => {
         Hi, my name is Samudra. I am a frontend developer from Indonesia.
       </h2>
       <div className={styles.btnContainer}>
-        <Link to="/experiences" className={styles.btnMain}>
-          My Experiences
+        <Link to="/about" className={styles.btnMain}>
+          Connect with me
         </Link>
-        <Link to="/about" className={styles.btnSecondary}>
-          About Me
+        <Link to="/experiences" className={styles.btnSecondary}>
+          See my experiences
         </Link>
       </div>
     </div>
