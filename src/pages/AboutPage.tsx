@@ -1,3 +1,4 @@
+import SendEmail from "../components/SendEmail";
 import styles from "../styles/AboutPage.module.css";
 
 const AboutPage = () => {
@@ -24,7 +25,7 @@ const AboutPage = () => {
         LinkedIn: Samudra Faris
       </a>
       <p className={styles.text}>or send me a message:</p>
-      <p>{import.meta.env.VITE_SOME_KEY}</p>
+      <SendEmail />
     </div>
   );
 };
