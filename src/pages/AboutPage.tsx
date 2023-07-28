@@ -21,12 +21,10 @@ const AboutPage = () => {
         rel="noreferrer"
         className={styles.link}
       >
-        Samudra Faris Arqam
+        LinkedIn: Samudra Faris
       </a>
-      <p className={styles.text}>or email me at:</p>
-      <a href="mailto:samudrafaris@gmail.com" className={styles.link}>
-        samudrafaris@gmail.com
-      </a>
+      <p className={styles.text}>or send me a message:</p>
+      <p>{import.meta.env.VITE_SOME_KEY}</p>
     </div>
   );
 };
