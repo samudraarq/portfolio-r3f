@@ -3,6 +3,7 @@
   gap: 10px;
   justify-items: start;
   padding-bottom: 40px;
+  overflow-y: auto;
 }
 
 .title {
