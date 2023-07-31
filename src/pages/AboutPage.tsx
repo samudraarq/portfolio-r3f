@@ -1,4 +1,4 @@
-import SendEmail from "../components/SendEmail";
+import MessageForm from "../components/MessageForm";
 import styles from "../styles/AboutPage.module.css";
 
 const AboutPage = () => {
@@ -25,7 +25,7 @@ const AboutPage = () => {
         LinkedIn: Samudra Faris
       </a>
       <p className={styles.text}>or send me a message:</p>
-      <SendEmail />
+      <MessageForm />
     </div>
   );
 };

@@ -1,0 +1,76 @@
+.container {
+  display: grid;
+  gap: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.successText {
+  background-color: #24a41b;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.errorText {
+  background-color: #e85139;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.inputContainer > label {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.inputContainer > input,
+.inputContainer > textarea {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.inputContainer > textarea {
+  resize: none;
+  height: 100px;
+  font-family: inherit;
+}
+
+.inputContainer > span {
+  font-size: 12px;
+  color: #ff9e9e;
+}
+
+.submitBtn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  max-width: 200px;
+}
+
+.submitBtn:hover {
+  background-color: #333;
+  color: #f5f5f5;
+}
+
+@media screen and (max-width: 425px) {
+  .container {
+    padding: 10px;
+  }
+}
